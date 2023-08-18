@@ -1,2 +1,12 @@
-# Servidor-multithreads
-Implementando uma simulação de um servidor multithreads, feito para a obtenção da nota parcial da disciplina Sistemas Operacionais I.
+Aluno: Marcos Vinicius dos Santos Oliveira
+Matrícula: 2021061656
+INSTRUÇÕES PARA EXECUTAR O PROGRAMA:
+1. Baixe o arquivo no google classroom e extraia os arquivos
+2. abra o terminal
+3. Será necessária a utilização de uma biblioteca externa (mpfr), utilizada para que o programa consiga exibir um número maior de casas decimais do número pi do que o convencional. Para utilizar a biblioteca, baixe a partir do terminal utilizando o sequinte comando: "sudo apt-get install mpfr-dev", coloque sua senha e sinalize com "sim" caso seja necessário durante a instalação.
+4. Após a instalação completa da biblioteca, no terminal, na pasta do programa, para compilar, execute o seguinte comando: "gcc main.c -o programa -Wall -Wextra -g3 -lmpfr", aperte enter. Logo após, insira o seguinte comando para executar: "./programa". Na execução será pedido que insira o número de requisições que se deseja executar e o número de threads trabalhadoras. O programa suporta 1000 requisições, podendo aumentar, aumentando o tamanho da fila de requisições no código. Já em relação ao número de threads, coloquei um limite máximo de 15, já que quando se coloca um valor muito grande, o programa tem dificuldades em gerar o resultado esperado.
+Após inserir os valores, espere o programa executar e observe os arquivos criados na pasta, o de requisições e os correspondentes a cada thread criada, mostrando as requisições processadas por ela.
+BUGS: 
+Nos meus testes não encontrei nenhum bug muito aparente, mas é possível que colocando uma quantidade muito grande threads, o programa não se comporte da maneira adequada, da mesma forma se for colocada uma quantidade de requisições maior que 1000.
+DIFICULDADES ENFRENTADAS:
+Minhas maiores dificuldades foram, em geral, aprender a utilizar as bibliotecas pthread e mpfr e seus comandos; encontrar a melhor forma de gerenciar o acesso das threads às requisições (tentei várias formas anteriormente e ocorriam diversos bugs(threads diferentes executando a mesma requisição, entre outras dificuldades semelhantes)); e encontrar a melhor forma de calcular pi com até 100 casas decimais e exibir isso, antes de utilizar a biblioteca mpfr, o valor estava sendo truncado por volta da casa 50.
